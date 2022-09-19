@@ -1,0 +1,27 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    margin: 0;
+}
+
+/* ======================
+        Header style
+   ====================== */
+
+.header-grid {
+    background-color: rgba(0, 0, 0, .4);
+    background-image: url("http://www.lacerda.com.br/wp-content/uploads/2019/01/cropped-lacerdas-1-2400x1300.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding-top: 4rem;
+    padding-bottom: 15.5rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+}
