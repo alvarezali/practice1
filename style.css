@@ -1,4 +1,10 @@
 
+:root {
+    --white: #FFFFFF;
+    --navRed: #cc494f;
+    --hover: rgba(245,245,245, .90);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -19,9 +25,173 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-bottom: 15.5rem;
     width: 100%;
     height: auto;
     display: grid;
+    grid-template-rows: auto auto auto auto;
 }
+
+.header-container {
+    grid-row: 1 / 2;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: auto;
+
+}
+
+.nav-container {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* ====================== Logo ====================== */
+
+.logo-pic {
+    width: 4.5rem;
+    height: auto;
+    margin: 0;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.logo-title {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.logo-title a {
+    text-decoration: none;
+    font-family: "Cabin", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    transition: color 250ms ease-out;
+}
+
+.logo-title:hover a {
+    color: var(--hover);
+}
+
+/* ====================== Navbar ====================== */
+
+.nav-ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    width: 96%;
+    height: 2.75rem;
+    background: var(--navRed);
+}
+
+.nav-li {
+    list-style-type: none;
+    height: auto;
+    text-align: center; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--white);
+    width: 100%;
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.10rem;
+}
+
+.nav-link:hover {
+    color: var(--hover);
+}
+
+/* ====================== Content ====================== */
+
+.content-container1 {
+    grid-row: 2 / 3;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-container2 {
+    grid-row: 3 / 4;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-container3 {
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-wrapper {
+    width: 50%;
+    margin-right: .75rem;
+}
+
+.content-wrapper h2 {
+    color: var(--white);
+    font-family: "Droid Serif", "Cabin";
+    font-size: 2.3rem;
+}
+
+.content-wrapper p {
+    color: var(--white);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.10rem;
+    line-height: 1.5rem;
+}
+
+.content-btn {
+    width: 10rem;
+    height: 3rem;
+    padding: .25rem;
+    background: var(--navRed);
+    opacity: 1;
+    text-align: center;
+    border-radius: .25rem;
+    transition: opacity 250ms ease-out;
+    
+}
+
+.content-btn a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: .9rem;
+    line-height: 2.5rem;
+    transition: color 250ms ease-out;
+}
+
+.content-btn:hover {
+    background: #cc494f;
+    opacity: .9;
+    cursor: pointer;
+}
+
+.content-btn:hover a{
+    color: var(--hover);
+}
+
+
+
