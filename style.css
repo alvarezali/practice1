@@ -34,6 +34,7 @@ body {
 }
 
 .header-container {
+    position: relative;
     grid-row: 1 / 2;
     width: 100%;
     display: grid;
@@ -60,6 +61,55 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+}
+
+.nav-toggle {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2rem;
+}
+
+.nav-toggle-lbl, .nav-toggle-lbl::before, .nav-toggle-lbl::after  {
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    border-radius: .25rem;
+    background: var(--white);
+}
+
+.nav-toggle-lbl {
+    display: none;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 150ms ease-out,
+                top 250ms ease-out,
+                background 150ms ease-out;
+}
+
+.nav-toggle-lbl::before, .nav-toggle-lbl::after {
+    content: '';
+}
+
+.nav-toggle-lbl::before {
+    top: -.5rem;
+    transition: top 150ms ease-out,
+                background 150ms ease-out;
+
+}
+
+.nav-toggle-lbl::after {
+    top: .5rem;
+    transition: transform 150ms ease-out,
+                top 150ms ease-out,
+                background 150ms ease-out;
+}
+
+.nav-toggle-lbl:hover {
+    cursor: pointer;
 }
 
 /* ====================== Logo ====================== */
@@ -107,14 +157,24 @@ body {
 }
 
 .nav-li {
-    position: relative;
     list-style-type: none;
     height: auto;
     text-align: center; 
-    /*border: 1px solid white;*/
+    
 }
 
-.nav-li::after {
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+    width: 100%;
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.10rem;
+    transition: color 150ms ease-out;
+}
+
+.nav-link::after {
     content: '';
     position: absolute;
     left: 0;
@@ -125,22 +185,12 @@ body {
     transition: transform 150ms ease-out;
 }
 
-.nav-li:hover::after {
-    transform: scale(1,1);
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--white);
-    width: 100%;
-    height: 100%;
-    font-family: "Raleway", sans-serif;
-    font-size: 1.10rem;
-    transition: color 150ms ease-out;
-}
-
 .nav-link:hover {
     color: var(--hover);
+}
+
+.nav-link:hover::after {
+    transform: scale(1,1);
 }
 
 /* ====================== Content ====================== */
@@ -221,6 +271,8 @@ body {
                 @Media
    ===================================== */
 
+/* ====================== 900px < width < 1150px ====================== */
+
 @media screen and (max-width: 1150px) and (min-width: 900px) {
     
     .logo-container {
@@ -232,6 +284,10 @@ body {
         grid-column: 1 / 4;
         grid-row: 2 / 3;
         justify-content: space-evenly;
+    }
+    
+    .nav-ul {
+        background: rgba(204, 73, 79, .75);
     }
 
     .content-container1 {
@@ -249,4 +305,103 @@ body {
     .content-wrapper {
         padding: 0;
     }
+}
+
+/* ====================== width < 900px ====================== */
+
+@media screen and (max-width: 900px) {
+
+    .logo-container {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .nav-toggle-lbl {
+        display: block;
+    }
+
+    .nav-container {
+        all: unset;
+        position: relative;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .nav-ul {
+        display: unset;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        margin-right: 0;
+        transform-origin: top;
+        transform: scale(1,0);
+        transition: transform 250ms ease-out;
+    }
+
+    .nav-toggle:checked ~ .nav-container > .nav-ul {
+        transform: scale(1,1);
+        transition: transform 250ms ease-out;
+    }
+
+    .nav-ul li {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .nav-li a {
+        opacity: 0;
+        transition: opacity 75ms ease-out;
+    }
+
+    .nav-toggle:checked ~ .nav-container > .nav-ul > .nav-li a {
+        opacity: 1;
+        transition: opacity 25ms ease-out 190ms;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-lbl{
+        background: var(--hover);
+        transform: rotate(45deg);
+        transition: transform 150ms ease-out,
+                    background 150ms ease-out;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-lbl:before {
+        top: 0;
+        background: var(--hover);
+        transition: top 150ms ease-out,
+                    background 150ms ease-out;
+
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-lbl:after {
+        top: 0;
+        background: var(--hover);
+        transform: rotate(-90deg);
+        transition: transform 150ms ease-out,
+                    top 150ms ease-out,
+                    background 150ms ease-out;
+    }
+
+    .content-container1 {
+        justify-content: center;
+    }
+
+    .content-container2 {
+        justify-content: center;
+    }
+
+    .content-container3 {
+        justify-content: center;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }   
+
 }
