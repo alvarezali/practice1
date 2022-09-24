@@ -265,6 +265,51 @@ body {
     color: var(--hover);
 }
 
+/* =====================================
+            Section1 style
+   ===================================== */
+
+.s-container1 {
+    background-color: var(--white);
+    margin: 1.5rem 2rem;
+    padding: 2rem 3rem;
+    height: auto;
+}
+
+.s-title1 {
+    text-align: center;
+}
+
+.s-info1{
+    text-align: justify;
+    line-height: 1.6;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.125rem;
+    font-weight: normal;
+    width: 100%;
+}
+
+.s-pic1 {
+    float: left;
+    width: 8rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.s-pic2 {
+    float: right;
+    width: 10rem;
+    height: auto;
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
 
 
 /* =====================================
