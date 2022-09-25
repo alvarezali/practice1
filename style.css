@@ -231,7 +231,7 @@ body {
     color: var(--white);
     font-family: "Raleway", sans-serif;
     font-size: 1.10rem;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
 }
 
 .content-btn {
@@ -266,49 +266,200 @@ body {
 }
 
 /* =====================================
-            Section1 style
+            Section1 (info) style
    ===================================== */
 
-.s-container1 {
+.info-container {
+    position: relative;
     background-color: var(--white);
-    margin: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     padding: 2rem 3rem;
     height: auto;
 }
 
-.s-title1 {
-    text-align: center;
+.info-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 3rem;;
+    height: 1px;
+    background: lightgray;
 }
 
-.s-info1{
+
+.info-wrapper {
+    margin-top: 2rem;
+}
+
+.title {
+    font-family: "Droid Serif", "Cabin";
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.info {
     text-align: justify;
     line-height: 1.6;
     font-family: "Raleway", sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.10rem;
     font-weight: normal;
     width: 100%;
 }
 
-.s-pic1 {
+.pic1 {
     float: left;
     width: 8rem;
     height: auto;
     margin-right: 1rem;
 }
 
-.s-pic2 {
+.pic2 {
     float: right;
-    width: 10rem;
+    width: 11rem;
+    height: auto;
+    margin-left: 1rem;
+}
+
+.pic3 {
+    float: right;
+    width: 16rem;
     height: auto;
     margin-left: 1rem;
 }
 
 
+/* =====================================
+            Section2 (video) style
+   ===================================== */
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    margin: 0 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem 3rem;
+    height: auto;
+}
+
+.video-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 66%;
+    height: 25rem;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-note {
+    margin-bottom: 2rem;
+    margin-top: .5rem;
+    font-family: "Raleway", sans-serif;
+    font-size: .9rem;
+    color: #555;
+}
 
 
+/* =====================================
+            Section3 (contact) style
+   ===================================== */
 
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 1rem;
+    background-color: black;
+}
 
+.contact-wrapper {
+    padding: 2rem;
+    width: 100%;
+    height: auto;
+    color: var(--white);
+}
 
+.contact-wrapper h3 {
+    font-family: "Droid Serif", "Cabin";
+    font-size: 1.10rem;
+    color: var(--white);
+}
+
+.contact-wrapper h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+}
+
+.contact-wrapper p {
+    font-family: "Raleway", sans-serif;
+}
+
+.icon-wrapper {
+    color: var(--navRed);
+    font-size: 2.5rem;
+}
+
+.concact-icon {
+    cursor: pointer;
+}
+
+.email-link {
+    font-family: "Raleway", sans-serif;
+    color: var(--navRed);
+
+}
+
+.email-link:visited {
+    color: var(--navRed);
+}
+
+.email {
+    width: 20rem;
+    height: 3rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+    padding: .25rem;
+    background: var(--navRed);
+    opacity: 1;
+    text-align: center;
+    border-radius: .25rem;
+    transition: opacity 150ms ease-out;
+    
+}
+
+.btn a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: .8rem;
+    line-height: 2.5rem;
+    transition: color 150ms ease-out;
+}
+
+.btn:hover {
+    background: #cc494f;
+    opacity: .9;
+    cursor: pointer;
+}
+
+.btn:hover a{
+    color: var(--hover);
+}
 
 
 
@@ -350,6 +501,11 @@ body {
     .content-wrapper {
         padding: 0;
     }
+
+    .video-wrapper {
+        height: 22.5rem;
+    }
+
 }
 
 /* ====================== width < 900px ====================== */
@@ -448,5 +604,26 @@ body {
         padding-left: 2rem;
         padding-right: 2rem;
     }   
+
+    .contact-container {
+        all:unset;
+        display: grid;
+        grid-auto-flow: row;
+        padding-top: 1rem;
+        background-color: black;
+    }
+
+    .video-wrapper {
+        height: 20rem;
+    }
+
+}
+
+/* ====================== width < 550px ====================== */
+
+@media screen and (max-width: 550px) {
+    .video-wrapper {
+        height: 16rem;
+    }
 
 }
