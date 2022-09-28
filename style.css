@@ -609,6 +609,7 @@ body {
 
     .nav-ul li {
         margin-bottom: 1rem;
+        margin-left: 1.5rem;
         text-align: left;
     }
 
@@ -676,15 +677,6 @@ body {
         height: 20rem;
     }
 
-}
-
-/* ====================== width < 550px ====================== */
-
-@media screen and (max-width: 550px) {
-    .video-wrapper {
-        height: 16rem;
-    }
-
     .footer-nav-ul {
         flex-direction: column;
         justify-content: center;
@@ -693,6 +685,15 @@ body {
 
     .footer-nav-li {
         margin-top: .5rem;
+    }
+
+}
+
+/* ====================== width < 550px ====================== */
+
+@media screen and (max-width: 550px) {
+    .video-wrapper {
+        height: 16rem;
     }
 
 }
