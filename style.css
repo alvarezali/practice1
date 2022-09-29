@@ -1,13 +1,14 @@
-*, a {
+* {
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-decoration: none;
     border: none;
     outline: none;
+    box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*::before, *::after {
     box-sizing: border-box;
 }
 
@@ -20,9 +21,8 @@
     --footer_bg:#2d2d2d;
 };
 
-body {
-    background-color: lightgray;
-    margin: 0;
+html, body {
+    background-color: lightgrey;
 }
 
 /* =====================================
@@ -281,7 +281,7 @@ body {
 .info-container {
     position: relative;
     background-color: var(--white);
-    margin: 2.5rem 2rem 0 2rem;
+    margin: 2.5rem 2rem 2.5rem 2rem;
     padding: 2rem 3rem 8rem 3rem;
     height: auto;
 }
@@ -352,6 +352,7 @@ body {
     margin: 0 2rem 4rem 2rem;
     padding: 2rem 3rem;
     height: auto;
+    /*border: 1px solid red;*/
 }
 
 .video-wrapper {
@@ -400,10 +401,11 @@ body {
     font-family: "Droid Serif", "Cabin";
     font-size: 1.10rem;
     color: var(--white);
+    margin: 0 0 2rem 0;
 }
 
 .contact-wrapper h4 {
-    margin: 0 0 .5rem 0;
+    margin: 1rem 0 .5rem 0;
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
 }
